@@ -1,0 +1,6 @@
+{
+  "name": "AI Calculator",
+  "description": "A modern glassmorphism AI-powered calculator with arithmetic and scientific operations, voice recognition, natural language math parsing, keyboard support, and calculation history.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

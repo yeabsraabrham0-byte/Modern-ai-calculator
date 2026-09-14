@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Glassmorphism Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <div class="app-container">
+    <main class="calculator-card glass">
+      <header class="calc-header">
+        <div class="brand">
+          <span class="brand-badge">AI 2.0</span>
+          <h1>Calculator</h1>
+        </div>
+        <button id="voice-btn" class="icon-btn voice-btn" title="Click to speak (e.g. '25 times 4' or '15% of 80')">
+          <span class="mic-icon">🎤</span>
+        </button>
+      </header>
+
+      <section class="display-container">
+        <div id="prev-operation" class="prev-display"></div>
+        <div id="current-display" class="current-display">0</div>
+        <div class="ai-status-wrapper">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="ai-status" class="ai-status">AI Assistant ready...</span>
+        </div>
+      </section>
+
+      <section class="keypad">
+        <button class="btn btn-action" onclick="clearDisplay()">AC</button>
+        <button class="btn btn-action" onclick="deleteLast()">DEL</button>
+        <button class="btn btn-action" onclick="appendOperator('%')">%</button>
+        <button class="btn btn-operator" onclick="appendOperator('/')">÷</button>
+
+        <button class="btn btn-num" onclick="appendNumber('7')">7</button>
+        <button class="btn btn-num" onclick="appendNumber('8')">8</button>
+        <button class="btn btn-num" onclick="appendNumber('9')">9</button>
+        <button class="btn btn-operator" onclick="appendOperator('*')">×</button>
+
+        <button class="btn btn-num" onclick="appendNumber('4')">4</button>
+        <button class="btn btn-num" onclick="appendNumber('5')">5</button>
+        <button class="btn btn-num" onclick="appendNumber('6')">6</button>
+        <button class="btn btn-operator" onclick="appendOperator('-')">−</button>
+
+        <button class="btn btn-num" onclick="appendNumber('1')">1</button>
+        <button class="btn btn-num" onclick="appendNumber('2')">2</button>
+        <button class="btn btn-num" onclick="appendNumber('3')">3</button>
+        <button class="btn btn-operator" onclick="appendOperator('+')">+</button>
+
+        <button class="btn btn-action" onclick="toggleSign()">±</button>
+        <button class="btn btn-num" onclick="appendNumber('0')">0</button>
+        <button class="btn btn-num" onclick="appendDecimal()">.</button>
+        <button class="btn btn-equals" onclick="calculate()">=</button>
+      </section>
+    </main>
+
+    <aside class="history-panel glass">
+      <div class="history-header">
+        <h2>History</h2>
+        <button class="btn-text-clear" onclick="clearHistory()">Clear</button>
+      </div>
+      <ul id="history-list" class="history-list"></ul>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
